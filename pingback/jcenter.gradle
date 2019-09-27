@@ -9,7 +9,7 @@ publish {
     repoName = 'Pingback'                                       //  仓库名，必须指定对应的仓库名保持一致
     groupId = 'yunzhe.plugin'                                   //  group
     artifactId = 'PingBack'                                     //  项目名称 name
-    publishVersion = '1.0.1'                                    //  版本号 version
+    publishVersion = '1.0.2'                                    //  版本号 version
     desc = '安卓埋点汇报类库'                                      //  描述
     website = 'https://github.com/liuhao722/PingBack.git'       //  网址，github 地址
 }
