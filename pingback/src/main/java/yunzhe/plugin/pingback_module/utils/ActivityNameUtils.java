@@ -7,65 +7,13 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
- * 获取json对象
+ * Author:  LiuHao
+ * Email:   114650501@qq.com
+ * TIME:    2019-09-27 --> 11:29
+ * Description: ActivityNameUtils 简述：获取制定的activity的label名称
  */
-public class JSONUtils {
-    /**
-     * 获取obj对象
-     */
-    public static SensorsJSONObject getJSONObject() {
-        return new SensorsJSONObject();
-    }
-
-    /**
-     * 获取array对象
-     */
-    public static SensorsJSONArray getJSONArray() {
-        return new SensorsJSONArray();
-    }
-
-    public static class SensorsJSONObject {
-        private SensorsJSONObject() {
-        }
-
-        JSONObject jsonObject = new JSONObject();
-
-        public SensorsJSONObject put(String key, Object value) {
-            try {
-                jsonObject.put(key, value);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return this;
-        }
-
-        public JSONObject create() {
-            return jsonObject;
-        }
-    }
-
-    public static class SensorsJSONArray {
-        private SensorsJSONArray() {
-        }
-
-        JSONArray jsonArray = new JSONArray();
-
-        public SensorsJSONArray put(String itemData) {
-            jsonArray.put(itemData);
-            return this;
-        }
-
-        public JSONArray create() {
-            return jsonArray;
-        }
-    }
-
+public class ActivityNameUtils {
     /**
      * 根据context获取不同activity的label名称
      *
@@ -109,5 +57,4 @@ public class JSONUtils {
         }
         return null;
     }
-
 }

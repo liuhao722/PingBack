@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Author:  LiuHao
  * Email:   114650501@qq.com
  * TIME:    2019-09-04 --> 11:31
- * Description: YZHashMap 简述：
+ * Description: YZHashMap 简述：线程安全的map
  */
 public class YZHashMap<K, V> extends ConcurrentHashMap<K, V> {
     public YZHashMap() {

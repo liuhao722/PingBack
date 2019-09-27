@@ -3,13 +3,13 @@ apply plugin: 'com.novoda.bintray-release'
 
 //  最终根据 groupId:jcenter_upload:publishVersion（compile 'yunzhe.plugin:jcenter_upload:1.0.0'）
 publish {
-    repoName = 'Pingback'                                       //  仓库名，必须指定对应的仓库名
-    bintrayUser = 'liukun722914'                                //  bintra用户名
     bintrayKey = ''                                             //  bintrayKey
     userOrg = ''                                                //  bintray.com用户名
+    repoName = 'Pingback'                                       //  仓库名，必须指定对应的仓库名保持一致
+    bintrayUser = 'liukun722914'                                //  bintra用户名
     groupId = 'yunzhe.plugin'                                   //  group
     artifactId = 'PingBack'                                     //  项目名称 name
-    publishVersion = '1.0.1'                                    //  版本号 version
+    publishVersion = '1.0.0'                                    //  版本号 version
     desc = '安卓使用Jcenter上传'                                  //  描述
     website = 'https://github.com/liuhao722/PingBack.git'       //  网址，github 地址
 }

@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="yunzhe.plugin.pingback_module" />
+<manifest package="yunzhe.plugin.pingback_module" />
