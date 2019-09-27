@@ -1,0 +1,23 @@
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
