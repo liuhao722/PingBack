@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         jsonObject.put("time", System.currentTimeMillis());
         // send(request, jsonObject);
 
+        //  方式三 获取一个新的JsonObject对象进行key-value存储
         YZJSONObject jsonObjectInstance = PingBackHelper.getJSONObject();
         jsonObjectInstance.put("title", "个人中心");
         jsonObjectInstance.put("desc", "点击了个人中心");
