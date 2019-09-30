@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: PingBackPlugin
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -24,4 +24,24 @@ dependencies {
     implementation project(':pingback')
 //    implementation 'yunzhe.plugin:PingBack:1.0.1'
     implementation 'com.android.support:appcompat-v7:29.0.2'
+}
+
+/**
+ * 分别定义Extension1 和 Extension2 类，申明参数传递变量
+ */
+
+class Extension1 {
+    String testVariable1 = null
+}
+
+class Extension2 {
+    String testVariable2 = null
+}
+
+class PingBackPlugin implements Plugin<Project> {
+    @Override
+    void apply(Project project) {
+        //  利用Extension创建 e1 e2闭包，用于接受外部传递的参数值
+        project.extensions.create('e1',Extension1)
+    }
 }
