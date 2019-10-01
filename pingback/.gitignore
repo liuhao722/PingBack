@@ -83,13 +83,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-/.idea/
-.idea/.name
-.idea/encodings.xml
-/.gradle/
-/.idea/gradle.xml
-/Pingback.iml
-/.idea/runConfigurations.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
+/pingback.iml
