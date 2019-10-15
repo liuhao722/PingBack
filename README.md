@@ -7,13 +7,13 @@
 ##### AndroidStudio中gradle引入：
 
 ```java
-implementation 'yunzhe.plugin:PingBack:1.0.0'
+implementation 'yunzhe.plugin:PingBack:1.0.2'
 ```
 
 ##### 如果遇到引入失败：出现以下错误
 
 ```java
-ERROR: Failed to resolve: yunzhe.plugin:PingBack:1.0.0
+ERROR: Failed to resolve: yunzhe.plugin:PingBack:1.0.2
 ```
 
 ##### 解决办法：
