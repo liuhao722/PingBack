@@ -1,16 +1,16 @@
 package yunzhe.plugin.pingback;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import yunzhe.plugin.pingback.keys.SensorKeys;
 import yunzhe.plugin.pingback_module.helper.PingBackHelper;
-import yunzhe.plugin.pingback_module.utils.YZJSONObject;
 import yunzhe.plugin.pingback_module.utils.YZHashMap;
+import yunzhe.plugin.pingback_module.utils.YZJSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         try {
             pingBack();
         } catch (JSONException e) {
