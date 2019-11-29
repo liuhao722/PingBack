@@ -17,7 +17,8 @@ import java.util.UUID;
  */
 public class DevicesIdHelper {
     private static final String TAG = "DevicesIdHelper";
-    private static final String PREFS_DEVICE_ID = "key_device_id";
+    private static final String PREFS_DEVICE_ID = "key_device_id";  //  正常的获取Token
+    private static final String PREFS_DEVICE_ID_APPEND_TAG = "key_device_id_append_tag";//  正常的获取Token追加了标志 比如I(xxx)
 
     private static String appDevicesID;
     private static String buryPointDevicesId;
@@ -94,6 +95,8 @@ public class DevicesIdHelper {
      */
     @SuppressLint("MissingPermission")
     public static String getBuryPointAndroidDevicesIdOrUUID(Context context) {
+        final SharedPreferences prefs = context.getSharedPreferences("YZSharedPreferences", 0);
+        buryPointDevicesId = prefs.getString(PREFS_DEVICE_ID_APPEND_TAG, null);
         if (isAboveAndroidPVersion()) {  //  大于安卓O版本
             if (TextUtils.isEmpty(buryPointDevicesId)) {
                 String serial;
@@ -120,6 +123,7 @@ public class DevicesIdHelper {
                     }
                     //API>=9 使用serial号
                     buryPointDevicesId = "U(" + new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString() + ")";
+                    prefs.edit().putString(PREFS_DEVICE_ID_APPEND_TAG, buryPointDevicesId).commit();
                     return buryPointDevicesId;
 
                 } catch (Exception exception) {
@@ -128,6 +132,7 @@ public class DevicesIdHelper {
                 }
                 //使用硬件信息拼凑出来的15位号码
                 buryPointDevicesId = "U(" + new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString() + ")";
+                prefs.edit().putString(PREFS_DEVICE_ID_APPEND_TAG, buryPointDevicesId).commit();
                 return buryPointDevicesId;
             } else {
                 return buryPointDevicesId;
@@ -148,6 +153,7 @@ public class DevicesIdHelper {
             } else {
                 buryPointDevicesId = "I(" + imei + ")";
             }
+            prefs.edit().putString(PREFS_DEVICE_ID_APPEND_TAG, buryPointDevicesId).commit();
             return buryPointDevicesId;
         }
     }
