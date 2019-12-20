@@ -1,1 +1,5 @@
-<manifest package="yunzhe.plugin.pingback_module" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="yunzhe.plugin.pingback_module">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+</manifest>
