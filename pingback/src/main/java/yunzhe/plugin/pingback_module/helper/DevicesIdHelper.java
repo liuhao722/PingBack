@@ -1,9 +1,8 @@
 package yunzhe.plugin.pingback_module.helper;
 
-import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -27,6 +26,7 @@ public class DevicesIdHelper {
     /**
      * 获取token（方式为根据设备信息生成或者UUID生成）
      */
+    @SuppressLint("MissingPermission")
     public static synchronized String getAndroidDevicesIdOrUUID(Context context) {
         final SharedPreferences prefs = context.getSharedPreferences("YZSharedPreferences", 0);
         appDevicesID = prefs.getString(PREFS_DEVICE_ID, null);
@@ -50,8 +50,6 @@ public class DevicesIdHelper {
 
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        if (context.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                        }
                         serial = android.os.Build.getSerial();
                     } else {
                         serial = Build.SERIAL;
@@ -95,6 +93,7 @@ public class DevicesIdHelper {
     /**
      * 获取专属的埋点id或者UUID
      */
+    @SuppressLint("MissingPermission")
     public static String getBuryPointAndroidDevicesIdOrUUID(Context context) {
         final SharedPreferences prefs = context.getSharedPreferences("YZSharedPreferences", 0);
         buryPointDevicesId = prefs.getString(PREFS_DEVICE_ID_APPEND_TAG, null);
@@ -118,8 +117,6 @@ public class DevicesIdHelper {
 
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        if (context.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                        }
                         serial = android.os.Build.getSerial();
                     } else {
                         serial = Build.SERIAL;
